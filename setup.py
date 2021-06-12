@@ -6,7 +6,7 @@ with (Path(__file__).resolve().parent / "README.md").open(encoding="utf-8") as f
 
 setup(
     name="brookie_plugin_library_abstract",
-    version="0.1.0",
+    version="0.2.1",
     description="Class abstract & utils from brooky library plugin",
     long_description=long_description,
     long_description_content_type="text/markdown",
