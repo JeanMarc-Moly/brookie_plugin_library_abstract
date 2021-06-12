@@ -12,7 +12,7 @@ class Archive:
             yield from cls._get_book_pages(a, sort)
 
     @classmethod
-    async def get_book_page(cls, archive: BinaryIO, page_id: int) -> BytesIO:
+    def get_book_page(cls, archive: BinaryIO, page_id: int) -> BytesIO:
         with cls.get_archive(archive) as a:
             return cls._get_book_page(a, page_id)
 
