@@ -13,7 +13,7 @@ class Archive:
 
     @classmethod
     async def get_book_page(cls, archive: BinaryIO, page_id: int) -> BytesIO:
-        async with cls.get_archive(archive) as a:
+        with cls.get_archive(archive) as a:
             return cls._get_book_page(a, page_id)
 
     @classmethod
@@ -39,6 +39,5 @@ class Archive:
     @staticmethod
     @contextmanager
     def get_archive(archive: BinaryIO) -> SeekableArchive:
-        with archive as b:
-            with SeekableArchive(b) as a:
-                yield a
+        with archive as b, SeekableArchive(b) as a:
+            yield a
