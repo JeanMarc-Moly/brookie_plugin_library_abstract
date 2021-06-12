@@ -7,8 +7,8 @@ from typing import BinaryIO, Iterator
 
 @dataclass
 class Library(ABC):
-    category: str
     name: str
+    plugin: str
 
     @abstractmethod
     async def __aenter__(self) -> Library:
